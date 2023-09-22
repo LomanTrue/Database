@@ -1,0 +1,6 @@
+CREATE TABLE orders (id INT PRIMARY KEY, order_number VARCHAR(10), customer_id INT, a BOOL);
+INSERT INTO orders (id, order_number, customer_id, a) VALUES (1, 'ORD001', 101, TRUE), (2, 'ORD002', 102, FALSE), (3, 'ORD003', 101, FALSE);
+CREATE TABLE customers (id INT PRIMARY KEY, name VARCHAR(50), email VARCHAR(100));
+INSERT INTO customers (id, name, email) VALUES (101, 'Dima', 'dima.com'), (102, 'Egor', 'egor.com'), (11, 'Dima', 'dima2.com'), (103, 'Igor', 'igor.com');
+SELECT * FROM orders
+RIGHT JOIN customers ON customers.id = orders.customer_id;
